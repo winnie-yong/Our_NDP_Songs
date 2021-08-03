@@ -39,6 +39,7 @@ public class CustomAdapter extends ArrayAdapter {
         TextView tvSinger = rowView.findViewById(R.id.textViewSinger);
 
         ImageView ivNew = rowView.findViewById(R.id.imageViewNew);
+        RatingBar ratingBar = rowView.findViewById(R.id.ratingBar);
 
         // Obtain the Android Version information based on the position
         Song currentVersion = versionList.get(position);
@@ -48,6 +49,7 @@ public class CustomAdapter extends ArrayAdapter {
         tvYear.setText(currentVersion.theYear());
         tvSinger.setText(currentVersion.getSingers());
         ivNew.setImageResource(R.drawable.newimg);
+        ratingBar.setRating(currentVersion.getStars());
 
         if(currentVersion.getYearReleased() >= 2019){
             ivNew.setVisibility(View.VISIBLE);
